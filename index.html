@@ -10,8 +10,16 @@
     <div class="container">
         <h1>نظام تسجيل البصمات</h1>
 
+        <!-- قسم تسجيل الدخول -->
+        <div id="login-section">
+            <h2>تسجيل الدخول</h2>
+            <input type="text" id="login-username" placeholder="اسم المستخدم">
+            <input type="password" id="login-password" placeholder="كلمة المرور">
+            <button id="login-btn">تسجيل الدخول</button>
+        </div>
+
         <!-- قسم تسجيل المستخدم -->
-        <div id="register-section">
+        <div id="register-section" style="display: none;">
             <h2>تسجيل مستخدم جديد</h2>
             <input type="text" id="name" placeholder="الاسم">
             <input type="text" id="userId" placeholder="رقم الهوية">
@@ -20,11 +28,12 @@
                 <option value="female">أنثى</option>
             </select>
             <input type="text" id="nationality" placeholder="الجنسية">
+            <input type="password" id="register-password" placeholder="كلمة المرور">
             <button id="register-user-btn">تسجيل المستخدم</button>
         </div>
 
         <!-- قسم تسجيل البصمة -->
-        <div id="camera-section">
+        <div id="camera-section" style="display: none;">
             <h2>تسجيل البصمة</h2>
             <video id="camera" autoplay></video>
             <button id="capture-btn">التقاط البصمة</button>
@@ -33,6 +42,7 @@
     </div>
 
     <script src="database.js"></script>
+    <script src="auth.js"></script>
     <script src="fingerprint.js"></script>
     <script src="script.js"></script>
 </body>
