@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة المدير</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>صفحة المدير</h1>
+        
+        <!-- قسم البحث بالبصمة -->
+        <div id="search-section">
+            <h2>الكشف عن المعلومات باستخدام البصمة</h2>
+            <video id="camera" autoplay></video>
+            <button id="search-btn">البحث بالبصمة</button>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="fingerprint.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
