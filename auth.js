@@ -1,8 +1,8 @@
 // تسجيل مستخدم جديد مع كلمة مرور
-function registerUserWithPassword(username, password) {
+function registerUserWithPassword(username, password, role) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const hashedPassword = hashPassword(password);
-    users.push({ username, password: hashedPassword });
+    users.push({ username, password: hashedPassword, role });
     localStorage.setItem('users', JSON.stringify(users));
 }
 
@@ -16,6 +16,12 @@ function login(username, password) {
     } else {
         return false; // تسجيل الدخول فاشل
     }
+}
+
+// الحصول على بيانات المستخدم
+function getUserByUsername(username) {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    return users.find(u => u.username === username);
 }
 
 // تشفير كلمة المرور (محاكاة باستخدام btoa)
