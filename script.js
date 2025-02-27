@@ -1,49 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // تهيئة الكاميرا
-    const video = document.getElementById('camera');
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            video.srcObject = stream;
-        })
-        .catch(err => {
-            console.error('Error accessing the camera: ', err);
-        });
-
     // تهيئة الأحداث
     document.getElementById('login-btn').addEventListener('click', () => {
         const username = document.getElementById('login-username').value;
         const password = document.getElementById('login-password').value;
 
         if (login(username, password)) {
-            document.getElementById('login-section').style.display = 'none';
-            document.getElementById('register-section').style.display = 'block';
-            document.getElementById('camera-section').style.display = 'block';
-        }
-    });
-
-    document.getElementById('register-user-btn').addEventListener('click', () => {
-        const name = document.getElementById('name').value;
-        const userId = document.getElementById('userId').value;
-        const gender = document.getElementById('gender').value;
-        const nationality = document.getElementById('nationality').value;
-        const password = document.getElementById('register-password').value;
-
-        if (name && userId && gender && nationality && password) {
-            const user = { id: userId, name, gender, nationality };
-            saveUser(user);
-            registerUserWithPassword(userId, password);
-            alert('تم تسجيل المستخدم بنجاح!');
+            // إذا كان تسجيل الدخول ناجحًا، انتقل إلى الصفحة الرئيسية
+            window.location.href = 'main.html';
         } else {
-            alert('يرجى ملء جميع الحقول!');
+            // إذا فشل تسجيل الدخول، عرض رسالة خطأ
+            document.getElementById('error-message').style.display = 'block';
+            document.getElementById('error-message').innerText = 'اسم المستخدم أو كلمة المرور غير صحيحة!';
         }
     });
 
-    document.getElementById('capture-btn').addEventListener('click', () => {
-        const userId = document.getElementById('userId').value;
-        if (userId) {
-            captureFingerprint(userId);
-        } else {
-            alert('يرجى إدخال رقم الهوية أولاً!');
-        }
-    });
+    // تهيئة الكاميرا في الصفحة الرئيسية
+    if (window.location.pathname.endsWith('main.html')) {
+        const video = document.getElementById('camera');
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error('Error accessing the camera: ', err);
+            });
+
+        document.getElementById('capture-btn').addEventListener('click', () => {
+            const userId = prompt('يرجى إدخال رقم الهوية:');
+            if (userId) {
+                captureFingerprint(userId);
+            } else {
+                alert('يرجى إدخال رقم الهوية أولاً!');
+            }
+        });
+    }
 });
