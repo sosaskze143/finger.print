@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام تسجيل البصمات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>نظام تسجيل البصمات</h1>
+
+        <!-- قسم تسجيل المستخدم -->
+        <div id="register-section">
+            <h2>تسجيل مستخدم جديد</h2>
+            <input type="text" id="name" placeholder="الاسم">
+            <input type="text" id="userId" placeholder="رقم الهوية">
+            <select id="gender">
+                <option value="male">ذكر</option>
+                <option value="female">أنثى</option>
+            </select>
+            <input type="text" id="nationality" placeholder="الجنسية">
+            <button id="register-user-btn">تسجيل المستخدم</button>
+        </div>
+
+        <!-- قسم تسجيل البصمة -->
+        <div id="camera-section">
+            <h2>تسجيل البصمة</h2>
+            <video id="camera" autoplay></video>
+            <button id="capture-btn">التقاط البصمة</button>
+            <div id="instructions"></div>
+        </div>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="fingerprint.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
