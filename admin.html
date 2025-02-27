@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة المدير</title>
+    <title>صفحة المدير - نظام تسجيل البصمات</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>صفحة المدير</h1>
-        
-        <!-- قسم البحث بالبصمة -->
-        <div id="search-section">
-            <h2>الكشف عن المعلومات باستخدام البصمة</h2>
-            <video id="camera" autoplay></video>
-            <button id="search-btn">البحث بالبصمة</button>
-            <div id="search-results"></div>
+        <h1>مرحبًا بك، المدير!</h1>
+
+        <!-- قسم إدارة المستخدمين -->
+        <div id="manage-users">
+            <h2>إدارة المستخدمين</h2>
+            <button id="view-users-btn">عرض جميع المستخدمين</button>
+            <div id="users-list"></div>
+        </div>
+
+        <!-- قسم التقارير -->
+        <div id="reports-section">
+            <h2>التقارير</h2>
+            <button id="generate-reports-btn">إنشاء تقارير</button>
+            <div id="reports-output"></div>
         </div>
     </div>
 
     <script src="database.js"></script>
-    <script src="fingerprint.js"></script>
     <script src="admin.js"></script>
 </body>
 </html>
