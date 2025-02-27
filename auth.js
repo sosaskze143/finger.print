@@ -12,11 +12,9 @@ function login(username, password) {
     const user = users.find(u => u.username === username && verifyPassword(password, u.password));
 
     if (user) {
-        alert('تم تسجيل الدخول بنجاح!');
-        return true;
+        return true; // تسجيل الدخول ناجح
     } else {
-        alert('اسم المستخدم أو كلمة المرور غير صحيحة!');
-        return false;
+        return false; // تسجيل الدخول فاشل
     }
 }
 
