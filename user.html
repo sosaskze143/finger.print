@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة المستخدم - نظام تسجيل البصمات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>مرحبًا بك، المستخدم!</h1>
+
+        <!-- قسم عرض البيانات الشخصية -->
+        <div id="user-info">
+            <h2>بياناتك الشخصية</h2>
+            <div id="user-data"></div>
+        </div>
+
+        <!-- قسم تسجيل البصمة -->
+        <div id="camera-section">
+            <h2>تسجيل البصمة</h2>
+            <video id="camera" autoplay></video>
+            <button id="capture-btn">التقاط البصمة</button>
+            <div id="instructions"></div>
+        </div>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="fingerprint.js"></script>
+    <script src="user.js"></script>
+</body>
+</html>
