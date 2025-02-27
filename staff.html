@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الموظف - نظام تسجيل البصمات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>مرحبًا بك، الموظف!</h1>
+
+        <!-- قسم تسجيل البصمة -->
+        <div id="camera-section">
+            <h2>تسجيل البصمة</h2>
+            <video id="camera" autoplay></video>
+            <button id="capture-btn">التقاط البصمة</button>
+            <div id="instructions"></div>
+        </div>
+
+        <!-- قسم إدخال بيانات العميل -->
+        <div id="client-data-section">
+            <h2>إدخال بيانات العميل</h2>
+            <input type="text" id="client-name" placeholder="اسم العميل">
+            <input type="text" id="client-id" placeholder="رقم الهوية">
+            <button id="save-client-btn">حفظ البيانات</button>
+        </div>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="fingerprint.js"></script>
+    <script src="staff.js"></script>
+</body>
+</html>
